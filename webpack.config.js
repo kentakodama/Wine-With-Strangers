@@ -1,9 +1,12 @@
 var path = require('path');
 
+//this turns all frontend code to javascript and bundles into one file
+
 module.exports = {
-  entry: './frontend/index.jsx',
+  entry: './frontend/index.jsx', //take all the code in front end
   output: {
-    filename: './bundle.js',
+    path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
+    filename: "bundle.js" //shove it into here 
   },
   module: {
     loaders: [
