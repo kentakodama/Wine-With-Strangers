@@ -9,18 +9,18 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 export const signup = (user) => (dispatch) => {
   return APIUtil.signup(user).then(
-    currentUser => {
-      dispatch(receiveCurrentUser(currentUser));
-  }, errors => dispatch(receiveErrors(errors))
+    currentUser => (
+      dispatch(receiveCurrentUser(currentUser))
+  ), errors => dispatch(receiveErrors(errors))
 );
 };
 
-// response can be one of two things. we capture success and failure above 
+// response can be one of two things. we capture success and failure above
 
 export const login = (user) => (dispatch) => {
-  return APIUtil.login(user).then(currentUser => {
-    dispatch(receiveCurrentUser(currentUser));
-  });
+  return APIUtil.login(user).then(currentUser => (
+    dispatch(receiveCurrentUser(currentUser))
+  ));
 };
 
 export const logout = () => (dispatch) => {
