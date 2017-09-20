@@ -1,7 +1,8 @@
 import merge from 'lodash/merge';
 import {RECEIVE_SESSION_ERRORS, RECEIVE_CURRENT_USER} from '../actions/session_actions';
 
-const SessionErrorsReducer = (oldState, action) => {
+//must set oldState to something cant be undefined
+const SessionErrorsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState;
   switch (action.type) {

@@ -5,6 +5,6 @@ import SessionErrorsReducer from './session_errors_reducer';
 const RootReducer = combineReducers({
   session: SessionReducer,
   errors: SessionErrorsReducer
-})
+});
 
-export default RootReducer
+export default RootReducer;
