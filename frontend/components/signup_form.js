@@ -12,6 +12,11 @@ class SignupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // renderErrors() {
+  //   return (this.props.errors.map((error, index) => (
+  //     <li key={`error-${index}`}>{error}</li>)));
+  // }
+
   handleName(e) {
     e.preventDefault();
     this.setState({ name: e.currentTarget.value });
@@ -47,8 +52,11 @@ class SignupForm extends React.Component {
           <input onChange={this.handlePassword} />
         </label>
         <input type='submit' />
+        <ul>
+          {this.props.errors.map((error, index) => (
+            <li key={`error-${index}`}>{error}</li>))}
+        </ul>
       </form>
-
     );
   }
 
