@@ -5,22 +5,24 @@ export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
 export const SIGNUP = 'SIGNUP';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 
 export const signup = (user) => (dispatch) => {
-  return APIUtil.signup(user).then(
-    currentUser => (
-      dispatch(receiveCurrentUser(currentUser))
-  ), errors => dispatch(receiveErrors(errors))
-);
+  return APIUtil.signup(user)
+  .then(
+    currentUser => (dispatch(receiveCurrentUser(currentUser))),
+    errors => dispatch(receiveSessionErrors(errors.responseJSON)) //strip away everything besides array of errors
+  );
 };
 
 // response can be one of two things. we capture success and failure above
 
 export const login = (user) => (dispatch) => {
-  return APIUtil.login(user).then(currentUser => (
-    dispatch(receiveCurrentUser(currentUser))
-  ));
+  return APIUtil.login(user)
+  .then(
+    currentUser => (dispatch(receiveCurrentUser(currentUser))),
+    errors => dispatch(receiveSessionErrors(errors.responseJSON))
+  );
 };
 
 export const logout = () => (dispatch) => {
@@ -34,7 +36,7 @@ export const receiveCurrentUser = (currentUser) => ({
   user: currentUser
 });
 
-export const receiveErrors = (errors) => ({
-  type: RECEIVE_ERRORS,
+export const receiveSessionErrors = (errors) => ({
+  type: RECEIVE_SESSION_ERRORS,
   errors: errors
 });

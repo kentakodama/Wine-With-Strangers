@@ -1,7 +1,7 @@
 
 import {connect} from 'react-redux';
 import { login, logout, signup } from '../actions/session_actions';
-import SessionForm from './session_form';
+import LoginForm from './login_form';
 
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
@@ -11,10 +11,10 @@ const mapStateToProps = (state, ownProps) => ({
 
 //formtype above will be used in the presentation component and it will be interpolated into the rendering
 
-
 const mapDispatchToProps = (dispatch, ownProps) => {
+
   let formType;
-  if (ownProps.location.pathname === "login") {
+  if (ownProps.location.pathname.slice(1) === "login") {
     formType = login;
   } else {
     formType = signup;
@@ -22,4 +22,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {formType: (user) => dispatch(formType(user))};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

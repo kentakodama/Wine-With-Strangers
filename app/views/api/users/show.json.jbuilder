@@ -1,1 +1,1 @@
-json.partial! './users/_user', user: @user #this delegates to partial 
+json.partial! 'api/users/user', user: @user #this delegates to partial 

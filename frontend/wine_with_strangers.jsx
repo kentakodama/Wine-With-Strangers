@@ -12,8 +12,17 @@ import {login, logout, signup} from './actions/session_actions';
 //IMPORT THE ACTIONS! THAT USE THE AJAX CALLS~!
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore(); //dont put store directly on window
+  let store;  //dont put store directly on window
 
+  //below is boot strapping.
+  if (window.currentUser) {
+    const preloadedState = { session: { currentUser: window.currentUser } };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
+  //testing
   window.login = login;
   window.logout = logout;
   window.signup = signup;
