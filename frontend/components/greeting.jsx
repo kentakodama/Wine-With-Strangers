@@ -11,16 +11,17 @@ import {Link} from 'react-router-dom';
   );
 
   //have a sign up sign in button
-  const generalGreeting = () => (
+  const generalGreeting = (demo) => (
     <div>
       <Link to='/signup'>Sign Up</Link>
       <Link to='/login'>Login</Link>
+      <button onClick={demo}>Demo</button>
     </div>
   );
 
 
-const Greeting = ({currentUser, logout}) => (
-  currentUser ? userGreeting(currentUser, logout) : generalGreeting()
+const Greeting = ({currentUser, logout, demo}) => (
+  currentUser ? userGreeting(currentUser, logout) : generalGreeting(demo)
 );
 
 
