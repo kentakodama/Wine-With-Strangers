@@ -4,20 +4,24 @@ import {Link} from 'react-router-dom';
 
 //display the username have a logout button
   const userGreeting = (currentUser, logout) => (
-    <div>
-      <h3>Welcome, {currentUser.name}</h3>
-      <button onClick={logout}>Log Out</button>
+    <div className='general-greeting'>
+      <button className="logout-button" onClick={logout}>Log Out</button>
+      <Link to="/about">ABOUT</Link>
+      <Link to="/cities">CITIES</Link>
     </div>
   );
 
   //have a sign up sign in button
   const generalGreeting = (demo) => (
-    <div>
-      <Link to='/signup'>Sign Up</Link>
-      <Link to='/login'>Login</Link>
-      <button onClick={demo}>Demo</button>
+    <div className="general-greeting">
+      <Link to="/about">ABOUT</Link>
+      <Link to="/cities">CITIES</Link>
+      <Link to='/signup'>SIGN UP</Link>
+      <Link to='/login'>LOGIN</Link>
+      <button onClick={demo}>DEMO</button>
     </div>
   );
+
 
 
 const Greeting = ({currentUser, logout, demo}) => (

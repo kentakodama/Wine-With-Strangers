@@ -1,23 +1,34 @@
 
 import React from 'react';
 import GreetingContainer from './greeting_container';
-import {Route, Switch} from 'react-router-dom';
+import {Link, Route, Switch} from 'react-router-dom';
 import SignupFormContainer from './signup_form_container';
 import LoginFormContainer from './login_form_container';
-import AuthRoute from '../util/route_util';
+import {AuthRoute} from '../util/route_util';
+import Cities from './cities';
+import About from './about';
+import MainPage from './main_page';
 
 
 
 const App = () => (
   <div>
-      <header>
-          <h1>Wine With Strangers</h1>
-          <Route path="/" component={GreetingContainer} />
-        </header>
-        <Switch>
-          <Route path="/signup" component={SignupFormContainer} />
-          <Route path="/login" component={LoginFormContainer} />
-        </Switch>
+    <header className='nav-bar'>
+      <Link to="/">Wine With Strangers</Link>
+      <Route path="/" component={GreetingContainer} />
+    </header>
+    <div className="main-view">
+      <Switch>
+        <Route exact path="/" component={MainPage} />
+        <AuthRoute path="/signup" component={SignupFormContainer} />
+        <Route path="/login" component={LoginFormContainer} />
+        <Route path="/cities" component={Cities} />
+        <Route path="/about" component={About} />
+      </Switch>
+    </div>
+    <footer>
+      <h1>This is das footer</h1>
+    </footer>
   </div>
 );
 
