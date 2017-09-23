@@ -4,10 +4,11 @@ import GreetingContainer from './greeting_container';
 import {Link, Route, Switch} from 'react-router-dom';
 import SignupFormContainer from './signup_form_container';
 import LoginFormContainer from './login_form_container';
-import {AuthRoute} from '../util/route_util';
+import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import Cities from './cities';
 import About from './about';
 import MainPage from './main_page';
+import Footer from './footer';
 
 
 
@@ -27,7 +28,7 @@ const App = () => (
       </Switch>
     </div>
     <footer>
-      <h1>This is das footer</h1>
+      <Route path="/" component={Footer} />
     </footer>
   </div>
 );
