@@ -41,6 +41,6 @@ event3 = Event.create(name: 'boston marathon',
   location_id: 3)
 
 
-Rsvp.create(attendee_id: demo_user.id, event_id: event1.id)
-Rsvp.create(attendee_id: user2.id, event_id: event2.id)
-Rsvp.create(attendee_id: user3.id, event_id: event3.id)
+Rsvp.create(attendee_id: 2, event_id: 1)
+Rsvp.create(attendee_id: 2, event_id: 3)
+Rsvp.create(attendee_id: 3, event_id: 2)

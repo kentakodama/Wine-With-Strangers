@@ -11,7 +11,7 @@
 
 class Rsvp < ApplicationRecord
 
-  validates :id, :event_id, :attendee_id, presence: true
+  validates :event_id, :attendee_id, presence: true
 
   belongs_to :event,
     primary_key: :id,
