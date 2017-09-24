@@ -6,7 +6,7 @@ class Api::LocationsController < ApplicationController
   end
 
   def show
-    @location = Location.find_by(params[:id])
+    @location = Location.find(params[:id])
     if @location
       render json: @location
     end

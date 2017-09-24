@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-
+import {getAllLocations} from './util/locaiton_api_util';
 //testing
 import {login, logout, signup} from './actions/session_actions';
 //DONT IMPORT AJAX CALLS DIRECTLY!
@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.signup = signup;
   window.getState = store.getState; //indirectly setting store is best
   window.dispatch = store.dispatch;
+  window.getAllLocations = getAllLocations;
 
 
   const root = document.getElementById('root');

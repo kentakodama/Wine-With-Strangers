@@ -1,11 +1,36 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  name            :string           not null
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  img_url         :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
   validates :email, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
   attr_reader :password
 
-  has_many :events
-  has_many :hosted_events
+  has_many :rsvps,
+    primary_key: :id,
+    foreign_key: :attendee_id,
+    class_name: :Rsvp
+
+  has_many :hosted_events,
+    primary_key: :id,
+    foreign_key: :event_id,
+    class_name: :Event
+
+  has_many :events,
+    through: :rsvps,
+    source: :event
 
   after_initialize :ensure_session_token
 
