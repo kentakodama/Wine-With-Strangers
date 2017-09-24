@@ -14,7 +14,6 @@ import Footer from './footer';
 
 const App = () => (
   <div>
-    
     <header className='nav-bar'>
       <Link to="/">Wine With Strangers</Link>
       <Route path="/" component={GreetingContainer} />
