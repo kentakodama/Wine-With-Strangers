@@ -7,7 +7,9 @@ const LocationIndexItem = ({location}) => (
   <li>
     <Link to={`/locations/${location.id}`} >
       <div className="city-link"  style={{backgroundImage: `url(${location.img_url})`}}>
-        <h2>{location.name}</h2>
+        <div className="filter">
+          <h2>{location.name}</h2>
+        </div>
       </div>
     </Link>
   </li>
