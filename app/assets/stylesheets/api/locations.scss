@@ -1,3 +1,24 @@
 // Place all the styles related to the api/locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.locations-page {
+
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .locations-index {
+    width: 900px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .city-link {
+      filter: sepia(6);
+      margin: 20px;
+      height: 150px;
+    }
+  }
+}

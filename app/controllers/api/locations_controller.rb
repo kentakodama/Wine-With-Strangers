@@ -2,13 +2,13 @@ class Api::LocationsController < ApplicationController
 
   def index
     @locations = Location.all
-    render json: @locations
+    render :index #must indirectly by passing it through the view here 
   end
 
   def show
     @location = Location.find(params[:id])
     if @location
-      render json: @location
+      render :show
     end
 
   end
@@ -16,6 +16,8 @@ class Api::LocationsController < ApplicationController
   def create
     @location = Location.new(locations_params)
     if @location.save
+      render :show
+    else
       render json: @location.errors.full_messages, status: 422
     end
   end

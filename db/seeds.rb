@@ -14,10 +14,10 @@ user3 = User.create(email: 'andres@gmail.com', password: 'password', name: 'Andr
 
 
 Location.destroy_all
-city1 = Location.create(name: "San Francisco")
-city2 = Location.create(name: "Tokyo")
-city3 = Location.create(name: "Boston")
-city4 = Location.create(name: "Kampot")
+city1 = Location.create(name: "San Francisco", img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506313611/sanfrancisco_xkeuex.jpg")
+city2 = Location.create(name: "Tokyo", img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506313612/tokyo_zzkfp1.jpg")
+city3 = Location.create(name: "Boston", img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506313612/boston_opan1k.jpg")
+city4 = Location.create(name: "Kampot", img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506313611/kampot_octstq.jpg")
 
 Event.destroy_all
 event1 = Event.create(name: 'Halloween',

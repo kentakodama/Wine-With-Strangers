@@ -4,7 +4,7 @@ class Api::EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     if @event
-      render json: @event
+      render :show
     else
       render json: @event.errors.full_messages
     end
@@ -13,7 +13,7 @@ class Api::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      render json: @event
+      render :show
     else
       render json: @event.errors.full_messages, status: 422
     end

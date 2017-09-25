@@ -1,18 +1,15 @@
-
 import merge from 'lodash/merge';
 import { RECEIVE_ALL_LOCATIONS, RECEIVE_LOCATION } from '../actions/location_actions';
 
-//json must be an object not array
 
-const LocationsReducer = (oldState = {}, action ) => {
+const EventsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_ALL_LOCATIONS:
-      return merge({}, oldState, action.locations.location_details);
+      return merge({}, oldState, action.locations.event_details);
     default:
       return oldState;
   }
 };
 
-
-export default LocationsReducer;
+export default EventsReducer;
