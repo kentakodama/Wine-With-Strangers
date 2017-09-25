@@ -10,9 +10,9 @@
   align-items: center;
   .locations-index {
     width: 900px;
-    height: 400px;
+    min-height: 400px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
     .city-link {
@@ -28,7 +28,7 @@
           font-size: 50px;
         }
       }
-      margin: 20px;
+      margin: 25px;
       height: 160px;
       width: 400px;
       background-size: cover;
@@ -37,4 +37,51 @@
 
     }
   }
+  .locations-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 35px;
+    h2 {
+      color: #EF6236;
+      font-size: 45px;
+      font-weight: bold;
+    }
+    p {
+      margin-top: 15px;
+      color: #5C5C5C;
+    }
+  }
+  .locations-explanation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      padding: 40px 0px;
+      color: #EF6236;
+      font-size: 40px;
+    }
+    p {
+      font-size: 25px;
+    }
+  }
+
+  .new-locations {
+    heigth: 300px;
+    width: 700px;
+    margin: 40px 0px
+  }
+  .new-city-columns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .city {
+      margin: 18px;
+      color: #EF6236
+    }
+  }
+
 }

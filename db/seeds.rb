@@ -14,10 +14,16 @@ user3 = User.create(email: 'andres@gmail.com', password: 'password', name: 'Andr
 
 
 Location.destroy_all
-city1 = Location.create(name: "San Francisco", img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506313611/sanfrancisco_xkeuex.jpg")
+city1 = Location.create(name: "San Francisco", img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506358595/sf2_qwavq5.jpg")
 city2 = Location.create(name: "Tokyo", img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506313612/tokyo_zzkfp1.jpg")
 city3 = Location.create(name: "Boston", img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506313612/boston_opan1k.jpg")
 city4 = Location.create(name: "Kampot", img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506313611/kampot_octstq.jpg")
+city5 = Location.create(name: "Barcelona", img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506357605/barcelona_jz3w7h.jpg")
+city6 = Location.create(name: "Aguascalientes", img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506357605/Aguascalientes_b7nyn9.jpg")
+city7 = Location.create(name: "Cape Town", img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506358817/cape_town_xzspli.jpg")
+city8 = Location.create(name: "Budapest", img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506358818/budapest_zegwsu.jpg")
+
+
 
 Event.destroy_all
 event1 = Event.create(name: 'Halloween',
