@@ -2,11 +2,12 @@ class Api::LocationsController < ApplicationController
 
   def index
     @locations = Location.all
-    render :index #must indirectly by passing it through the view here 
+    render :index #must indirectly by passing it through the view here
   end
 
   def show
     @location = Location.find(params[:id])
+    @events = @location.events
     if @location
       render :show
     end

@@ -1,13 +1,13 @@
 export const getAllLocations = () => (
   $.ajax({
   	method: 'GET',
-  	url: '/api/locations'}
+  	url: 'api/locations'}
   )
 );
 
 export const getLocation = (id) => (
   $.ajax({
   	method: 'GET',
-  	url: `/api/locations/${id}`}
+  	url: `api/locations/${id}`}
   )
 );

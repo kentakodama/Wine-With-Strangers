@@ -23,4 +23,4 @@ const LocationsPage = () => (
   </div>
 );
 
-export default LocationsPage
+export default LocationsPage;
