@@ -25,7 +25,7 @@ class User < ApplicationRecord
 
   has_many :hosted_events,
     primary_key: :id,
-    foreign_key: :event_id,
+    foreign_key: :host_id,
     class_name: :Event
 
   has_many :events,

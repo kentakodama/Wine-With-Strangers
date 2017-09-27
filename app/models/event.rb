@@ -16,7 +16,7 @@
 
 class Event < ApplicationRecord
 
-  validates :name, :host_id, :address, :time, :information, presence: true
+  validates :name, :host_id, :address, :date, :hour, :information, presence: true
   validates :occured, inclusion: { in: [true, false] }
 
   belongs_to :host,
@@ -37,4 +37,16 @@ class Event < ApplicationRecord
   has_many :guests,
     through: :rsvps,
     source: :attendee
+
+  # before_validation :ensure_host_id, :ensure_location_id
+  #
+  # def ensure_host_id
+  #   self.host_id = current_user.id
+  # end
+  #
+  # def ensure_location_id
+  #   self.location_id.to_i!
+  # end
+
+
 end

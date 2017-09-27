@@ -22,7 +22,7 @@ class EventIndex extends React.Component {
               <EventIndexItem event={event}/>)
           }
         </ul>
-        <Link to={`/locations/${this.props.match.params.locationId}/new`} >
+        <Link className="new-event-link" to={`/locations/${this.props.match.params.locationId}/new`} >
           Create New Event!
         </Link>
       </div>

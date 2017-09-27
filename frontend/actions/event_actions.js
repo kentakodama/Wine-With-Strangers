@@ -1,6 +1,7 @@
 import * as EventAPIUtil from '../util/event_api_util';
 
 export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
+export const RECEIVE_EVENT = "RECEIVE_EVENT";
 
 export const createNewEvent  = (event) => (dispatch) => {
   return EventAPIUtil.createNewEvent(event)
@@ -9,6 +10,14 @@ export const createNewEvent  = (event) => (dispatch) => {
   );
 };
 
+export const receiveEvents = (events) => ({
+  type: RECEIVE_EVENTS,
+  events
+});
+export const receiveEvent = (event) => ({
+  type: RECEIVE_EVENT,
+  event
+});
 
 
 //create api util for create new events

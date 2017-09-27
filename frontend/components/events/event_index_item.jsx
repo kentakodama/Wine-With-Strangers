@@ -11,7 +11,7 @@ class EventIndexItem extends React.Component {
 
   render() {
 
-    const time = Date(this.props.event.time);
+    const time = new Date(this.props.event.date + " " + this.props.event.hour);
 
     return (
       <li>
@@ -35,7 +35,9 @@ class EventIndexItem extends React.Component {
               </div>
             </div>
             <div className="name-and-address">
-              <h3 className="name">{this.props.event.name}</h3>
+              <div className="event-name">
+                <h3>{this.props.event.name}</h3>
+              </div>
               <hr className="hr"></hr>
               <h2 className="address">{this.props.event.address}</h2>
             </div>

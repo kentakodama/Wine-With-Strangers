@@ -8,7 +8,7 @@
 require 'date'
 
 User.destroy_all
-demo_user = User.create(email: 'demo', password: 'password', name: 'Guest')
+demo_user = User.create(email: 'demo', password: 'password', name: 'Guest', img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506396470/Screen_Shot_2017-08-13_at_7.07.58_PM_lzxy4q.png")
 user2 = User.create(email: 'kenta@gmail.com', password: 'password', name: 'Kenta', img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506396470/Screen_Shot_2017-08-13_at_7.07.58_PM_lzxy4q.png")
 user3 = User.create(email: 'andres@gmail.com', password: 'password', name: 'Andres')
 
@@ -29,22 +29,26 @@ Event.destroy_all
 event1 = Event.create(name: 'Halloween',
   host_id: 1,
   address: '160 spear st.',
-  time: DateTime.new(2007,11,19,8,37,48),
+  date: '2014-08-20',
+  hour: '15:30:00',
   occured: true, information: 'this is a party', location_id: 1)
 event2 = Event.create(name: 'christmas',
   host_id: 2,
   address: 'fuchu',
-  time: DateTime.new(2007,11,19,8,37,48),
+  date: '2014-08-20',
+  hour: '15:30:00',
   occured: false,
   information: 'this is a party',
   location_id: 2)
 event3 = Event.create(name: 'boston marathon',
   host_id: 3,
   address: 'boston commons',
-  time: DateTime.new(2007,11,19,8,37,48),
+  date: '2014-08-20',
+  hour: '15:30:00',
   occured: false,
   information: 'this is a party',
   location_id: 3)
+
 
 
 Rsvp.create(attendee_id: 2, event_id: 1)

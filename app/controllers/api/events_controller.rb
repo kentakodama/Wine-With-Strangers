@@ -11,8 +11,8 @@ class Api::EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
-    @events = Event.all
+    @event = current_user.hosted_events.new(event_params)
+
     if @event.save
       render :show
     else
@@ -21,10 +21,11 @@ class Api::EventsController < ApplicationController
   end
 
   def index
+
     @events = Event.all
   end
 
   def event_params
-      params.require(:event).permit(:host_id, :address, :time, :information, :occurred, :location_id)
+      params.require(:event).permit(:name, :host_id, :address, :date, :hour, :information, :occurred, :location_id)
   end
 end
