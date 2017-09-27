@@ -12,7 +12,7 @@ class Api::EventsController < ApplicationController
 
   def create
     @event = current_user.hosted_events.new(event_params)
-
+    
     if @event.save
       render :show
     else

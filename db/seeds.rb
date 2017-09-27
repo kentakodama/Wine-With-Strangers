@@ -9,8 +9,8 @@ require 'date'
 
 User.destroy_all
 demo_user = User.create(email: 'demo', password: 'password', name: 'Guest', img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506396470/Screen_Shot_2017-08-13_at_7.07.58_PM_lzxy4q.png")
-user2 = User.create(email: 'kenta@gmail.com', password: 'password', name: 'Kenta', img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506396470/Screen_Shot_2017-08-13_at_7.07.58_PM_lzxy4q.png")
-user3 = User.create(email: 'andres@gmail.com', password: 'password', name: 'Andres')
+user2 = User.create(email: 'kenta@gmail.com', password: 'password', name: 'Kenta', img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506552199/dwight_copy_lj6rya.png")
+user3 = User.create(email: 'andres@gmail.com', password: 'password', name: 'Andres', img_url: "https://res.cloudinary.com/dql6mlrow/image/upload/v1506552013/Screen_Shot_2017-09-01_at_9.23.47_AM_ha8cev.png")
 
 
 Location.destroy_all
