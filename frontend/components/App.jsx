@@ -10,6 +10,7 @@ import LocationPage from './locations/location_page';
 import About from './about';
 import MainPage from './main_page';
 import Footer from './footer';
+import NewEventForm from './events/new_event_form';
 
 // <Route path={`/locations/${location.id}`} component={LocationShowContainer} />
 
@@ -25,7 +26,8 @@ const App = () => (
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <Route path="/login" component={LoginFormContainer} />
         <Route exact path="/locations" component={AllLocationsPage} />
-        <Route path="/locations/:locationId" component={LocationPage} />
+        <Route exact path="/locations/:locationId" component={LocationPage} />
+        <Route path="/locations/:locationId/new" component={NewEventForm} />
         <Route path="/about" component={About} />
       </Switch>
     </div>

@@ -12,6 +12,7 @@ class Api::EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @events = Event.all
     if @event.save
       render :show
     else

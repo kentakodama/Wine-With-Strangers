@@ -1,0 +1,77 @@
+.events-page {
+  padding: 30px;
+
+}
+.info-container {
+  border: solid 1px gray;
+  width: 27%;
+  padding-bottom: 30px;
+  margin: 3% 3%;
+  float: left;
+  background-color: white;
+  .info-and-pic {
+    padding: 0px 20px;
+    margin-top: -1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .time-container {
+      display: flex;
+      flex-direction: column;
+      .date {
+        font-size: 50px;
+        margin-top: 30px;
+      }
+      .meeting-time {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        h3 {
+          font-size: 20px;
+          margin-right: 10px;
+          color: gray;
+        }
+        .start-time {
+          font-size: 20px;
+          color: gray;
+        }
+      }
+    }
+    .host-info {
+      border: solid 2px #F5BC4C;
+      padding: 3px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .host-pic {
+        width: 100px;
+        height: 100px;
+        background-size: cover;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1px;
+      }
+      h1 {
+        color: #EF6236;
+      }
+    }
+  }
+  .name-and-address {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .name {
+      font-size: 40px;
+    }
+    .hr {
+      width: 80%;
+    }
+    .address {
+      color: gray;
+    }
+  }
+
+
+}

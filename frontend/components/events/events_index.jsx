@@ -2,6 +2,7 @@ import React from 'react';
 import EventIndexItem from './event_index_item';
 import NewEventForm from './new_event_form';
 import values from 'lodash/values';
+import { Link } from 'react-router-dom';
 
 class EventIndex extends React.Component {
   constructor(props) {
@@ -14,13 +15,16 @@ class EventIndex extends React.Component {
   render() {
     const events = values(this.props.events);
     return (
-      <div>
+      <div className="events-page">
         <ul>
           {
             events.map(event =>
               <EventIndexItem event={event}/>)
           }
         </ul>
+        <Link to={`/locations/${this.props.match.params.locationId}/new`} >
+          Create New Event!
+        </Link>
       </div>
     );
   }
