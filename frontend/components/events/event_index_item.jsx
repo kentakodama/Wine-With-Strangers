@@ -15,9 +15,9 @@ class EventIndexItem extends React.Component {
     const time = new Date(this.props.event.date + " " + this.props.event.hour);
 
     return (
-      <li>
-        <Link to={`/locations/${this.props.event.location_id}/${this.props.event.location_id}`} >
-          <div className="info-container">
+      <li className="event-item">
+        <div className="info-container">
+          <div>
             <div className="info-and-pic">
               <div className="time-container">
                 <Moment className="date" format="MM/DD">
@@ -41,10 +41,10 @@ class EventIndexItem extends React.Component {
               </div>
               <hr className="hr"></hr>
               <h2 className="address">{this.props.event.address}</h2>
+              <RsvpButtonContainer event={this.props.event} />
             </div>
           </div>
-        </Link>
-        <RsvpButtonContainer event={this.props.event} />
+        </div>
       </li>
     );
   }
@@ -52,3 +52,5 @@ class EventIndexItem extends React.Component {
 }
 
 export default EventIndexItem;
+
+// <Link className="info-container" to={`/locations/${this.props.event.location_id}/${this.props.event.location_id}`} >

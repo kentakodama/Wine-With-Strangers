@@ -8,11 +8,15 @@ const RsvpButton = ({currentUserId, event, updateEvent}) => {
   let newEvent = merge({}, event);
   if (event.guests.indexOf(currentUserId) === -1) {
     newEvent.guests.push(currentUserId);
-    return (<button className="join-button" onClick={() => updateEvent(newEvent)}>join</button>);
+    return (
+        <button className="rsvp" className="join-button" onClick={() => updateEvent(newEvent)}>rsvp</button>
+    );
   } else {
     let index = event.guests.indexOf(currentUserId);
     newEvent.guests.splice(index, 1);
-    return (<button className="unjoin-button" onClick={() => updateEvent(newEvent)}>unjoin</button>);
+    return (
+        <button className="rsvp" className="unjoin-button" onClick={() => updateEvent(newEvent)}>skip</button>
+    );
   }
 
 };
