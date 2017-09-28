@@ -17,7 +17,7 @@ class LocationsIndex extends React.Component {
     return (
       <div>
         <ul className="locations-index">
-          {locations.map(location => <LocationIndexItem key={location.id} location={location} />)}
+          {locations.map(location => <LocationIndexItem key={location.id} location={location}/>)}
         </ul>
       </div>
     );

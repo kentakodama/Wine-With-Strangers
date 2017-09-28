@@ -1,12 +1,37 @@
+.city-header {
+  margin: -30px -30px 30px -30px;;
+  height: 250px;
+  width: clear;
+  background-size: cover;
+  background-position: center;
+  .city-name {
+    font-size: 120px;
+    color: white;
+    font-style: italic;
+  }
+  .filter {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(247,191,77,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .events-page {
   padding: 30px;
   min-height: 500px;
   display: flex;
   flex-direction: column;
-  .city-name {
-    align-self: center;
-    font-size: 40px;
-  }
+
+
+
+
+
+
+
+
   .new-event-link {
     align-self: center;
     color: white;

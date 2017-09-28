@@ -13,13 +13,21 @@ class EventIndex extends React.Component {
     this.props.requestLocation(this.props.match.params.locationId);
   }
 
-
   render() {
     const events = values(this.props.events);
 
+    if (this.props.city === undefined ) {
+      return <div></div>
+    }
+
+
     return (
       <div className="events-page">
-        <h1 className="city-name">{this.props.city ? this.props.city.name : ''}</h1>
+        <div className="city-header" style={{backgroundImage: `url(${this.props.city.img_url })`}}>
+          <div className="filter">
+            <h1 className="city-name">{ this.props.city.name }</h1>
+          </div>
+        </div>
         <ul>
           {
             events.map(event =>
