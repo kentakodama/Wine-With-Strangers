@@ -60,7 +60,7 @@ event4 = Event.create!(name: 'Harvard Wine Party',
   hour: '12:00:00',
   occured: false,
   information: 'this is a party',
-  location_id: 3)
+  location_id: city3.id)
 event5 = Event.create!(name: 'French Wine Party',
   host_id: user5.id,
   address: 'boston commons',
@@ -111,7 +111,7 @@ event10 = Event.create!(name: 'Hungary or thirsty?',
   location_id: city8.id)
 
 
-
-Rsvp.create!(attendee_id: user2.id, event_id: city1.id)
-Rsvp.create!(attendee_id: user2.id, event_id: city3.id)
-Rsvp.create!(attendee_id: city3.id, event_id: city2.id)
+# 
+# Rsvp.create!(attendee_id: user2.id, event_id: city1.id)
+# Rsvp.create!(attendee_id: user2.id, event_id: city3.id)
+# Rsvp.create!(attendee_id: user3.id, event_id: city2.id)
