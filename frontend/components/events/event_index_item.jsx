@@ -39,8 +39,8 @@ class EventIndexItem extends React.Component {
               <div className="event-name">
                 <h3>{this.props.event.name}</h3>
               </div>
-              <hr className="hr"></hr>
               <h2 className="address">{this.props.event.address}</h2>
+              <hr className="hr"></hr>
               <RsvpButtonContainer event={this.props.event} />
             </div>
           </div>

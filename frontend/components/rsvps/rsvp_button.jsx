@@ -9,13 +9,19 @@ const RsvpButton = ({currentUserId, event, updateEvent}) => {
   if (event.guests.indexOf(currentUserId) === -1) {
     newEvent.guests.push(currentUserId);
     return (
-        <button className="rsvp" className="join-button" onClick={() => updateEvent(newEvent)}>rsvp</button>
+      <div className="rsvp">
+        <p className="space">-</p>
+        <button className="join-button" onClick={() => updateEvent(newEvent)}>rsvp</button>
+      </div>
     );
   } else {
     let index = event.guests.indexOf(currentUserId);
     newEvent.guests.splice(index, 1);
     return (
-        <button className="rsvp" className="unjoin-button" onClick={() => updateEvent(newEvent)}>skip</button>
+      <div className="rsvp" >
+        <p className="attendance-status">YOU'RE GOING!</p>
+        <button className="unjoin-button" onClick={() => updateEvent(newEvent)}>skip</button>
+      </div>
     );
   }
 
