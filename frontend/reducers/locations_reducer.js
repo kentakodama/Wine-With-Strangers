@@ -9,6 +9,8 @@ const LocationsReducer = (oldState = {}, action ) => {
   switch (action.type) {
     case RECEIVE_ALL_LOCATIONS:
       return merge({}, oldState, action.locations.location_details);
+    case RECEIVE_LOCATION:
+      return merge({}, oldState, action.location.location_details);
     default:
       return oldState;
   }

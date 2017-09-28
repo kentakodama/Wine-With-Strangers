@@ -12,7 +12,7 @@ class Api::EventsController < ApplicationController
 
   def create
     @event = current_user.hosted_events.new(event_params)
-    
+
     if @event.save
       render :show
     else
@@ -20,12 +20,28 @@ class Api::EventsController < ApplicationController
     end
   end
 
-  def index
+  def update
+    @event = Event.find(params[:id])
 
+    guests = params["event"]["guests"]
+    if !guests || guests.length == 1 && guests.first == ""
+      guests = []
+    else
+      guests.map!(&:to_i)
+    end
+    @event.guest_ids = guests
+    if @event.save
+      render :show
+    else
+      render json: @event.errors.full_messages, status: 403
+    end
+  end
+
+  def index
     @events = Event.all
   end
 
   def event_params
-      params.require(:event).permit(:name, :host_id, :address, :date, :hour, :information, :occurred, :location_id)
+      params.require(:event).permit(:name, :host_id, :address, :date, :hour, :information, :occurred, :location_id, :guests)
   end
 end

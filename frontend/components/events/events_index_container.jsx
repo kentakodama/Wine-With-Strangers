@@ -8,8 +8,11 @@ import {createNewEvent} from '../../actions/event_actions';
 
 import { requestLocation } from '../../actions/location_actions';
 
+
+
 const mapStateToProps = (state, ownProps) => ({
-  events: selectLocationEvents(state.events, ownProps.match.params.locationId)
+  events: selectLocationEvents(state.events, ownProps.match.params.locationId),
+  city: state.locations[ownProps.match.params.locationId]
 });
 
 //provider(isak) gives passes the url to child components,

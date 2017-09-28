@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Moment from 'react-moment';
+import RsvpButtonContainer from '../rsvps/rsvp_button_container';
 
 //{this.props.event.time}
 
@@ -43,6 +44,7 @@ class EventIndexItem extends React.Component {
             </div>
           </div>
         </Link>
+        <RsvpButtonContainer event={this.props.event} />
       </li>
     );
   }

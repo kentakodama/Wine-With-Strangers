@@ -9,17 +9,21 @@ class EventIndex extends React.Component {
     super(props);
   }
   //locationId comes from Route wildcard
-  componentWillMount() {
+  componentDidMount() {
     this.props.requestLocation(this.props.match.params.locationId);
   }
+
+
   render() {
     const events = values(this.props.events);
+
     return (
       <div className="events-page">
+        <h1 className="city-name">{this.props.city ? this.props.city.name : ''}</h1>
         <ul>
           {
             events.map(event =>
-              <EventIndexItem event={event}/>)
+              <EventIndexItem key={event.id} event={event}/>)
           }
         </ul>
         <Link className="new-event-link" to={`/locations/${this.props.match.params.locationId}/new`} >

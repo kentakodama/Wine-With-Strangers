@@ -12,7 +12,7 @@ const EventsReducer = (oldState = {}, action) => {
     case RECEIVE_EVENTS:
       return merge({}, oldState, action.events);
     case RECEIVE_EVENT:
-      return merge({}, oldState, action.event);
+      return Object.assign({}, oldState, action.event);
     default:
       return oldState;
   }

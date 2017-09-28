@@ -111,7 +111,7 @@ event3 = Event.create!(name: 'boston marathon',
 #   location_id: 3)
 #
 
-# 
-# Rsvp.create!(attendee_id: 2, event_id: 1)
-# Rsvp.create!(attendee_id: 2, event_id: 3)
-# Rsvp.create!(attendee_id: 3, event_id: 2)
+
+Rsvp.create!(attendee_id: 2, event_id: 1)
+Rsvp.create!(attendee_id: 2, event_id: 3)
+Rsvp.create!(attendee_id: 3, event_id: 2)

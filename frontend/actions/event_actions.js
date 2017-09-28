@@ -10,6 +10,13 @@ export const createNewEvent  = (event) => (dispatch) => {
   );
 };
 
+export const updateEvent = (event) => (dispatch) => {
+  return EventAPIUtil.patchEvent(event)
+  .then(
+    response => (dispatch(receiveEvent(response)))
+  );
+};
+
 export const receiveEvents = (events) => ({
   type: RECEIVE_EVENTS,
   events
@@ -18,6 +25,8 @@ export const receiveEvent = (event) => ({
   type: RECEIVE_EVENT,
   event
 });
+
+
 
 
 //create api util for create new events

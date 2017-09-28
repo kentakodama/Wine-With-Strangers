@@ -3,6 +3,10 @@
   min-height: 500px;
   display: flex;
   flex-direction: column;
+  .city-name {
+    align-self: center;
+    font-size: 40px;
+  }
   .new-event-link {
     align-self: center;
     color: white;

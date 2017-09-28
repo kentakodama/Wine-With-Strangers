@@ -2,7 +2,7 @@ import React from 'react';
 
 import LocationsIndexContainer from './locations_index_container';
 
-const otherCities = ["Osaka", "Nairobi", "Khartoum", "Santiago", "Shanghai", "Saigon", "Machu Pichu", "Dubai", "London", "Queenstown", "Perth", "Singapore", "Dublin", "New Delhi", "Canada", "Oslo", "Bogata", "Hebron", "Changsha", "Lamu", "Cairo", "Milano", "Warsaw"]
+const otherCities = ["Osaka", "Nairobi", "Khartoum", "Santiago", "Shanghai", "Saigon", "Machu Pichu", "Dubai", "London", "Queenstown", "Perth", "Singapore", "Dublin", "New Delhi", "Canada", "Oslo", "Bogata", "Hebron", "Changsha", "Lamu", "Cairo", "Milano", "Warsaw"];
 
 const LocationsPage = () => (
   <div className="locations-page">

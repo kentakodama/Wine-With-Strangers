@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom';
 import EventsIndexContainer from '../events/events_index_container';
 
 const LocationPage = (props) => {
-  console.log(props);
   return (
     <div>
       <EventsIndexContainer />
