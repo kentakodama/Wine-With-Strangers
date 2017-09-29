@@ -20,7 +20,7 @@ const App = () => (
   <div>
     <header className='nav-bar'>
       <div className="logo">
-        <Link to="/">
+        <Link to="/dashboard/upcoming">
           <img src="https://res.cloudinary.com/dql6mlrow/image/upload/v1506683563/Screen_Shot_2017-09-29_at_4.11.56_AM_p8eoyp.png"/>
         </Link>
       </div>
@@ -30,14 +30,14 @@ const App = () => (
       <Switch>
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
-        <Route path="/locations/:locationId/new" component={NewEventForm} />
+        <ProtectedRoute path="/locations/:locationId/new" component={NewEventForm} />
         <ProtectedRoute path="/locations/:locationId" component={LocationPage} />
         <Route path="/locations" component={AllLocationsPage} />
         <Route path="/about" component={About} />
-          <Route path="/dashboard/host" component={HostedEventsContainer} />
-          <Route path="/dashboard/past" component={PastEventsContainer} />
-          <Route path="/dashboard/upcoming" component={UpcomingEventsContainer} />
-        <Route path="/" component={MainPage} />
+          <ProtectedRoute path="/dashboard/host" component={HostedEventsContainer} />
+          <ProtectedRoute path="/dashboard/past" component={PastEventsContainer} />
+          <ProtectedRoute path="/dashboard/upcoming" component={UpcomingEventsContainer} />
+        <AuthRoute path="/" component={MainPage} />
       </Switch>
     </div>
     <footer>
