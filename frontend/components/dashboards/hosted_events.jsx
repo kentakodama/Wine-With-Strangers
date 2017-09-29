@@ -1,6 +1,7 @@
 import React from 'react';
 import EventIndexItem from '../events/event_index_item';
 import DashboardNav from './dashboard_nav';
+import {Link} from 'react-router-dom';
 
 class HostedEvents extends React.Component {
 
@@ -19,7 +20,13 @@ class HostedEvents extends React.Component {
 
     return (
       <div>
-        <DashboardNav />
+        <div className="dashboard-nav">
+          <div className="dashboard-links">
+            <Link className="dashboard-link" to="/dashboard/past">Past Events</Link>
+            <Link className="dashboard-link" to="/dashboard">Upcoming Events</Link>
+            <Link className="selected" to="/dashboard/host">Hosted Events</Link>
+          </div>
+        </div>
         <div className="events-page">
           <ul>
             {
