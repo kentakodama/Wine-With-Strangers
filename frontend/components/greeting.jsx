@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 //display the username have a logout button
   const userGreeting = (currentUser, logout) => (
     <div className='general-greeting'>
-      <Link to="/about">ABOUT</Link>
       <Link to="/locations">CITIES</Link>
       <Link to="/dashboard/upcoming">DASHBOARD</Link>
       <button className="logout-button" onClick={logout}>LOG OUT</button>
@@ -15,7 +14,6 @@ import {Link} from 'react-router-dom';
   //have a sign up sign in button
   const generalGreeting = (demo) => (
     <div className="general-greeting">
-      <Link to="/about">ABOUT</Link>
       <Link to="/locations">CITIES</Link>
       <Link to='/signup'>SIGN UP</Link>
       <Link to='/login'>LOGIN</Link>
