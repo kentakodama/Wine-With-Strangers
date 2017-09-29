@@ -25,14 +25,15 @@ const App = () => (
     </header>
     <div className="main-view">
       <Switch>
-        <Route exact path="/" component={MainPage} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
-        <Route path="/login" component={LoginFormContainer} />
-        <Route exact path="/locations" component={AllLocationsPage} />
-        <Route exact path="/locations/:locationId" component={LocationPage} />
+        <AuthRoute path="/login" component={LoginFormContainer} />
+        <ProtectedRoute path="/dashboard" component={Dashboard} />
         <Route path="/locations/:locationId/new" component={NewEventForm} />
+        <Route path="/locations/:locationId" component={LocationPage} />
+        <Route path="/locations" component={AllLocationsPage} />
         <Route path="/about" component={About} />
-        <Route path="/dashboard" component={Dashboard} />
+        <AuthRoute exact path="/" component={MainPage} />
+        <ProtectedRoute path="/" component={Dashboard} />
       </Switch>
     </div>
     <footer>
