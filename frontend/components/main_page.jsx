@@ -3,7 +3,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const MainPage = (props) => {
-  console.log(props);
   return (
   <div className="main-page">
     <div className="pitch-section">

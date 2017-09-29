@@ -45,7 +45,6 @@ class NewEventForm extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return(
       <div className="event-form-page">
         <h1>Host Your Own Event</h1>
