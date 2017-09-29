@@ -12,7 +12,6 @@ import {AuthRoute, ProtectedRoute} from '../../util/route_util';
 const Dashboard = () => {
   return (
     <div>
-      <DashboardNav />
       <Switch>
         <Route path="/dashboard/host" component={HostedEventsContainer} />
         <Route path="/dashboard/past" component={PastEventsContainer} />

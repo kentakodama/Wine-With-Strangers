@@ -2,7 +2,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const MainPage = () => (
+const MainPage = (props) => {
+  console.log(props);
+  return (
   <div className="main-page">
     <div className="pitch-section">
       <h1>Tired of Drinking Alone?</h1>
@@ -49,6 +51,6 @@ const MainPage = () => (
       </div>
     </div>
   </div>
-);
+)};
 
 export default MainPage;

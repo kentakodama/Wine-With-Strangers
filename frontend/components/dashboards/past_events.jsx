@@ -1,5 +1,6 @@
 import React from 'react';
 import EventIndexItem from '../events/event_index_item';
+import DashboardNav from './dashboard_nav';
 
 class PastEvents extends React.Component {
 
@@ -15,13 +16,16 @@ class PastEvents extends React.Component {
     const events = this.props.pastEvents;
 
     return (
-      <div className="events-page">
-        <ul>
-          {
-            events.map(event =>
-              <EventIndexItem key={event.id} event={event}/>)
-          }
-        </ul>
+      <div>
+        <DashboardNav />
+        <div className="events-page">
+          <ul>
+            {
+              events.map(event =>
+                <EventIndexItem key={event.id} event={event}/>)
+            }
+          </ul>
+        </div>
       </div>
     );
   }

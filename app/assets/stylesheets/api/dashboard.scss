@@ -1,0 +1,21 @@
+.dashboard-nav {
+  width: clear;
+  height: 80px;
+  background-color: #FCE6B8;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .dashboard-links {
+    align-self: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    .dashboard-link {
+      font-size: 30px;
+    }
+  }
+}
+
+.selected {
+  background-color: white;
+}

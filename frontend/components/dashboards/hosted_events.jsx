@@ -1,5 +1,6 @@
 import React from 'react';
 import EventIndexItem from '../events/event_index_item';
+import DashboardNav from './dashboard_nav';
 
 class HostedEvents extends React.Component {
 
@@ -17,13 +18,16 @@ class HostedEvents extends React.Component {
     const events = this.props.hostedEvents;
 
     return (
-      <div className="events-page">
-        <ul>
-          {
-            events.map(event =>
-              <EventIndexItem key={event.id} event={event}/>)
-          }
-        </ul>
+      <div>
+        <DashboardNav />
+        <div className="events-page">
+          <ul>
+            {
+              events.map(event =>
+                <EventIndexItem key={event.id} event={event}/>)
+            }
+          </ul>
+        </div>
       </div>
     );
   }

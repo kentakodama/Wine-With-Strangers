@@ -34,8 +34,8 @@ const App = () => (
         <Route path="/locations/:locationId" component={LocationPage} />
         <Route path="/locations" component={AllLocationsPage} />
         <Route path="/about" component={About} />
-        <ProtectedRoute path="/dashboard" component={Dashboard} />
-        <AuthRoute path="/" component={MainPage} />
+        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/" component={MainPage} />
       </Switch>
     </div>
     <footer>

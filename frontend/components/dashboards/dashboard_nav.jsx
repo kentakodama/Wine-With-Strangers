@@ -9,9 +9,9 @@ const DashboardNav = () => {
   return (
     <div className="dashboard-nav">
       <div className="dashboard-links">
-        <Link to="/dashboard">Upcoming Events</Link>
-        <Link to="/dashboard/host">Hosted Events</Link>
-        <Link to="/dashboard/past">Past Events</Link>
+        <Link className="dashboard-link" to="/dashboard/past">Past Events</Link>
+        <Link className="dashboard-link" to="/dashboard">Upcoming Events</Link>
+        <Link className="dashboard-link" to="/dashboard/host">Hosted Events</Link>
       </div>
     </div>
   );
