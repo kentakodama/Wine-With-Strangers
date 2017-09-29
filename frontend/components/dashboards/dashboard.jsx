@@ -7,8 +7,7 @@ import PastEventsContainer from './past_events_container';
 import HostedEvents from './hosted_events';
 import PastEvents from './past_events';
 import DashboardNav from './dashboard_nav';
-
-// import EventsIndexContainer from '../events/events_index_container';
+import {AuthRoute, ProtectedRoute} from '../../util/route_util';
 
 const Dashboard = () => {
   return (
@@ -17,7 +16,7 @@ const Dashboard = () => {
       <Switch>
         <Route path="/dashboard/host" component={HostedEventsContainer} />
         <Route path="/dashboard/past" component={PastEventsContainer} />
-        <Route exact path="/dashboard" component={UpcomingEventsContainer} />
+        <Route path="/dashboard" component={UpcomingEventsContainer} />
       </Switch>
     </div>
   );

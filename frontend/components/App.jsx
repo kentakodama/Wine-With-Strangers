@@ -12,6 +12,7 @@ import MainPage from './main_page';
 import Footer from './footer';
 import NewEventForm from './events/new_event_form';
 import Dashboard from './dashboards/dashboard';
+import DashboardIntro from './dashboards/dashboard_intro';
 
 // <Route path={`/locations/${location.id}`} component={LocationShowContainer} />
 
@@ -29,13 +30,12 @@ const App = () => (
       <Switch>
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
-        <ProtectedRoute path="/dashboard" component={Dashboard} />
         <Route path="/locations/:locationId/new" component={NewEventForm} />
         <Route path="/locations/:locationId" component={LocationPage} />
         <Route path="/locations" component={AllLocationsPage} />
         <Route path="/about" component={About} />
-        <AuthRoute exact path="/" component={MainPage} />
-        <ProtectedRoute path="/" component={Dashboard} />
+        <ProtectedRoute path="/dashboard" component={Dashboard} />
+        <AuthRoute path="/" component={MainPage} />
       </Switch>
     </div>
     <footer>
