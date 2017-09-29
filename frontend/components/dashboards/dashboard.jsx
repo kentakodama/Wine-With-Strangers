@@ -1,4 +1,14 @@
 
+
+
+
+
+
+
+//this is not being rendered now
+
+
+
 import React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import UpcomingEventsContainer from './upcoming_events_container';
@@ -15,7 +25,7 @@ const Dashboard = () => {
       <Switch>
         <Route path="/dashboard/host" component={HostedEventsContainer} />
         <Route path="/dashboard/past" component={PastEventsContainer} />
-        <Route path="/dashboard" component={UpcomingEventsContainer} />
+        <Route path="/dashboard/upcoming" component={UpcomingEventsContainer} />
       </Switch>
     </div>
   );

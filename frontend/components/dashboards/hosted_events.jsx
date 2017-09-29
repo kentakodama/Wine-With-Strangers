@@ -23,7 +23,7 @@ class HostedEvents extends React.Component {
         <div className="dashboard-nav">
           <div className="dashboard-links">
             <Link className="dashboard-link" to="/dashboard/past">Past Events</Link>
-            <Link className="dashboard-link" to="/dashboard">Upcoming Events</Link>
+            <Link className="dashboard-link" to="/dashboard/upcoming">Upcoming Events</Link>
             <Link className="selected" to="/dashboard/host">Hosted Events</Link>
           </div>
         </div>

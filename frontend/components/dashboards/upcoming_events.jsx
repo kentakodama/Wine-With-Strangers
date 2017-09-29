@@ -20,7 +20,7 @@ class UpcomingEvents extends React.Component {
         <div className="dashboard-nav">
           <div className="dashboard-links">
             <Link className="dashboard-link" to="/dashboard/past">Past Events</Link>
-            <Link className="selected" to="/dashboard">Upcoming Events</Link>
+            <Link className="selected" to="/dashboard/upcoming">Upcoming Events</Link>
             <Link className="dashboard-link" to="/dashboard/host">Hosted Events</Link>
           </div>
         </div>

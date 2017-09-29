@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
     <div className='general-greeting'>
       <Link to="/about">ABOUT</Link>
       <Link to="/locations">CITIES</Link>
-      <Link to="/dashboard">DASHBOARD</Link>
+      <Link to="/dashboard/upcoming">DASHBOARD</Link>
       <button className="logout-button" onClick={logout}>LOG OUT</button>
     </div>
   );

@@ -10,7 +10,7 @@ const Footer = () => (
     <div className="footer-links">
       <Link className="footer-link" to="/about">About</Link>
       <Link className="footer-link" to="/locations">Cities</Link>
-      <Link className="footer-link" to="/dashboard">Dashboard</Link>
+      <Link className="footer-link" to="/dashboard/upcoming">Dashboard</Link>
       <a className="footer-link" href="https://github.com/kentakodama">GitHub</a>
       <a className="footer-link" href="https://www.facebook.com/kentakodama">Facebook</a>
       <a className="footer-link" href="https://www.linkedin.com/in/kenta-kodama-59b85232/">Linkedin</a>

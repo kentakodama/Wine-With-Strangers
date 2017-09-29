@@ -12,9 +12,9 @@ import MainPage from './main_page';
 import Footer from './footer';
 import NewEventForm from './events/new_event_form';
 import Dashboard from './dashboards/dashboard';
-import DashboardIntro from './dashboards/dashboard_intro';
-
-// <Route path={`/locations/${location.id}`} component={LocationShowContainer} />
+import HostedEventsContainer from './dashboards/hosted_events_container';
+import PastEventsContainer from './dashboards/past_events_container';
+import UpcomingEventsContainer from './dashboards/upcoming_events_container';
 
 const App = () => (
   <div>
@@ -31,10 +31,12 @@ const App = () => (
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
         <Route path="/locations/:locationId/new" component={NewEventForm} />
-        <Route path="/locations/:locationId" component={LocationPage} />
+        <ProtectedRoute path="/locations/:locationId" component={LocationPage} />
         <Route path="/locations" component={AllLocationsPage} />
         <Route path="/about" component={About} />
-        <Route path="/dashboard" component={Dashboard} />
+          <Route path="/dashboard/host" component={HostedEventsContainer} />
+          <Route path="/dashboard/past" component={PastEventsContainer} />
+          <Route path="/dashboard/upcoming" component={UpcomingEventsContainer} />
         <Route path="/" component={MainPage} />
       </Switch>
     </div>
@@ -45,3 +47,5 @@ const App = () => (
 );
 
 export default App;
+
+// <Route path="/dashboard/upcoming" component={Dashboard} />
