@@ -3,11 +3,12 @@ import * as DashboardAPIUtil from '../util/dashboard_util_api';
 
 export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
 export const RECEIVE_EVENT = "RECEIVE_EVENT";
-
+export const RECEIVE_EVENT_ERRORS = "RECEIVE_EVENT_ERRORS";
 export const createNewEvent  = (event) => (dispatch) => {
   return EventAPIUtil.createNewEvent(event)
   .then(
-    events => (dispatch(receiveEvents(events)))
+    events => (dispatch(receiveEvents(events))),
+    errors => dispatch(receiveEventErrors(errors.responseJSON))
   );
 };
 
@@ -33,6 +34,11 @@ export const requestUserEvents = () => (dispatch) => {
     events => (dispatch(receiveEvents(events)))
   );
 };
+
+export const receiveEventErrors = (errors) => ({
+  type: RECEIVE_EVENT_ERRORS,
+  errors: errors
+});
 
 
 

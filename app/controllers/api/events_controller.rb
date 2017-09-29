@@ -5,8 +5,6 @@ class Api::EventsController < ApplicationController
     @event = Event.find(params[:id])
     if @event
       render :show
-    else
-      render json: @event.errors.full_messages
     end
   end
 
