@@ -41,6 +41,15 @@ class Api::EventsController < ApplicationController
     @events = Event.all
   end
 
+  def user_events
+    @events = Event.all.select do |event|
+      current_user.events.include?(event) || current_user.hosted_events.include?(event)
+    end
+    if @events
+      render :index
+    end
+  end
+
   def event_params
       params.require(:event).permit(:name, :host_id, :address, :date, :hour, :information, :occurred, :location_id, :guests)
   end

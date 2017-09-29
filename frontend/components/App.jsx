@@ -11,13 +11,16 @@ import About from './about';
 import MainPage from './main_page';
 import Footer from './footer';
 import NewEventForm from './events/new_event_form';
+import Dashboard from './dashboards/dashboard';
 
 // <Route path={`/locations/${location.id}`} component={LocationShowContainer} />
 
 const App = () => (
   <div>
     <header className='nav-bar'>
-      <Link to="/">Wine With Strangers</Link>
+      <Link to="/">
+        Wine with Strangers
+      </Link>
       <Route path="/" component={GreetingContainer} />
     </header>
     <div className="main-view">
@@ -29,6 +32,7 @@ const App = () => (
         <Route exact path="/locations/:locationId" component={LocationPage} />
         <Route path="/locations/:locationId/new" component={NewEventForm} />
         <Route path="/about" component={About} />
+        <Route path="/dashboard" component={Dashboard} />
       </Switch>
     </div>
     <footer>

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :locations, only: [:index, :show, :create]
     resources :events, only: [:show, :create, :index, :update]
     resources :rsvps, only: [:create, :destroy]
+    get '/user_events', to: 'events#user_events'
   end
 
 end

@@ -111,7 +111,7 @@ event10 = Event.create!(name: 'Hungary or thirsty?',
   location_id: city8.id)
 
 
-# 
-# Rsvp.create!(attendee_id: user2.id, event_id: city1.id)
+#
+#Rsvp.create!(attendee_id: user2.id, event_id: city1.id)
 # Rsvp.create!(attendee_id: user2.id, event_id: city3.id)
 # Rsvp.create!(attendee_id: user3.id, event_id: city2.id)
