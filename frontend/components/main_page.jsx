@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const MainPage = () => (
   <div className="main-page">
     <div className="pitch-section">
-      <h1>Tired of Drinking alone?</h1>
+      <h1>Tired of Drinking Alone?</h1>
       <div>
         <Link to='/signup' className="signup-button">MEET STRANGERS NOW</Link>
       </div>
@@ -25,7 +25,7 @@ const MainPage = () => (
       </div>
     </div>
     <div className="pitch-container">
-      <p>SO WHY ARE THOUSANDS OF PEOPLE DOING IT?</p>
+      <p className="catch-phrase">SO WINE NOT JOIN US ?</p>
       <div className="pitch">
         <img src="http://dcu7hky3kqbj1.cloudfront.net/assets/landing/realpeople-1d5fb20324228744e992569f082415977c4b3799ef7b14cc5922c2dade18f97c.png" />
         <div className="words">
@@ -44,7 +44,7 @@ const MainPage = () => (
         <img src="http://dcu7hky3kqbj1.cloudfront.net/assets/landing/highfive-e7a173c8a773070abd084deeac2eb53919a70990425599ed5e7164dc143d45c6.png" />
         <div className="words">
           <p className="summary">Make friends!</p>
-          <p className="paragraph">And your eyes are made…for eye contact! Real humans are so much cooler than their tweets or Instagram pictures. Tea time has real humans! #nofilter!</p>
+          <p className="paragraph">And your eyes are made…for eye contact! Real humans are so much cooler than their tweets or Instagram pictures!</p>
         </div>
       </div>
     </div>

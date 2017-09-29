@@ -4,14 +4,16 @@ import {Link} from 'react-router-dom';
 
 const Footer = () => (
   <div className="footer-component">
-    <div className="footer-links">
-      <Link to="/about">ABOUT</Link>
-      <Link to="/locations">CITIES</Link>
-      <Link to="/signup">SIGN UP</Link>
-      <Link to="/signup">FACEBOOK</Link>
+    <div className="footer-logo" >
+      <img src="https://res.cloudinary.com/dql6mlrow/image/upload/v1506683563/Screen_Shot_2017-09-29_at_4.11.56_AM_p8eoyp.png"/>
     </div>
-    <div className="final-info">
-      <p>Tea With Strangers is all about making our cities feel more like neighborhoods. We're more "connected" than ever before, but we're also more alone. And all we want to do is bring people together because, well, the world is better that way.</p>
+    <div className="footer-links">
+      <Link className="footer-link" to="/about">About</Link>
+      <Link className="footer-link" to="/locations">Cities</Link>
+      <Link className="footer-link" to="/dashboard">Dashboard</Link>
+      <a className="footer-link" href="https://github.com/kentakodama">GitHub</a>
+      <a className="footer-link" href="https://www.facebook.com/kentakodama">Facebook</a>
+      <a className="footer-link" href="https://www.linkedin.com/in/kenta-kodama-59b85232/">Linkedin</a>
     </div>
   </div>
 );

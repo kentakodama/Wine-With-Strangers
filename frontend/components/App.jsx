@@ -18,9 +18,11 @@ import Dashboard from './dashboards/dashboard';
 const App = () => (
   <div>
     <header className='nav-bar'>
-      <Link to="/">
-        Wine with Strangers
-      </Link>
+      <div className="logo">
+        <Link to="/">
+          <img src="https://res.cloudinary.com/dql6mlrow/image/upload/v1506683563/Screen_Shot_2017-09-29_at_4.11.56_AM_p8eoyp.png"/>
+        </Link>
+      </div>
       <Route path="/" component={GreetingContainer} />
     </header>
     <div className="main-view">

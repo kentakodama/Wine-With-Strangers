@@ -31,7 +31,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="login-form-box">
-        <h3>Let's drink away our loneliness, together!</h3>
+        <h3>Welcome back, amigo!</h3>
         <form className="login-form" onSubmit={this.handleSubmit}>
           <input className="login-form-input" placeholder="enter email" onChange={this.handleEmail} />
           <input type="password"className="login-form-input" placeholder="enter password" onChange={this.handlePassword} />

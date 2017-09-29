@@ -5,6 +5,9 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
+  h3 {
+    font-size: 40px;
+  }
 }
 
 .login-form {
@@ -19,8 +22,9 @@
   .login-button {
     color: white;
     align-items: center;
+    margin-top: 20px;
     padding-bottom: 15px;
-    padding-top: 40px;
+    padding-top: 15px;
     width: 650px;
     background-color: #EF6236;
     text-align: center;

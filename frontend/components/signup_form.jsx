@@ -37,11 +37,11 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="login-form-box">
-        <h3>Let's drink away our loneliness, together!</h3>
+        <h3>Let's drink away our loneliness... together!</h3>
         <form className='login-form' onSubmit={this.handleSubmit} >
           <input className="login-form-input" placeholder="Enter your first name" onChange={this.handleName} />
           <input className="login-form-input" placeholder="Enter email" onChange={this.handleEmail} />
-          <input className="login-form-input" placeholder="Please select a password"onChange={this.handlePassword} />
+          <input className="login-form-input" type="password" placeholder="Please select a password"onChange={this.handlePassword} />
           <input className="login-button" type='submit' value="Start Drinking!" />
           <ul>
             {this.props.errors.map((error, index) => (
