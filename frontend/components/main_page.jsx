@@ -31,7 +31,7 @@ const MainPage = (props) => {
         <img src="http://dcu7hky3kqbj1.cloudfront.net/assets/landing/realpeople-1d5fb20324228744e992569f082415977c4b3799ef7b14cc5922c2dade18f97c.png" />
         <div className="words">
           <p className="summary">It’s weird.</p>
-          <p className="paragraph">Everyone at tea time is stepping a little out of their comfort zone. This makes it so much easier to actually learn something unexpected about the people around you. Because open minds are a prerequisite around here.</p>
+          <p className="paragraph">Everyone is stepping a little out of their comfort zone. This makes it so much easier to actually learn something unexpected about the people around you. Because open minds are a prerequisite around here.</p>
         </div>
       </div>
       <div className="pitch">
