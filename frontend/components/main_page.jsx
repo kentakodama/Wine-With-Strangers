@@ -28,25 +28,32 @@ const MainPage = (props) => {
     <div className="pitch-container">
       <p className="catch-phrase">SO WINE NOT JOIN US ?</p>
       <div className="pitch">
-        <img src="http://dcu7hky3kqbj1.cloudfront.net/assets/landing/realpeople-1d5fb20324228744e992569f082415977c4b3799ef7b14cc5922c2dade18f97c.png" />
+        <img src="https://res.cloudinary.com/dql6mlrow/image/upload/v1509436295/Screen_Shot_2017-10-31_at_12.49.13_AM_a4leip.png" />
         <div className="words">
-          <p className="summary">It’s weird.</p>
-          <p className="paragraph">Everyone is stepping a little out of their comfort zone. This makes it so much easier to actually learn something unexpected about the people around you. Because open minds are a prerequisite around here.</p>
+          <p className="summary">We know you're cool</p>
+          <p className="paragraph">Everyone's got something unique to contribute. We all have amazing stories and experiences we've lived. Wouldn't you like to share yours and be a part of someone else's? </p>
         </div>
       </div>
       <div className="pitch">
         <div className="words">
-          <p className="summary">We won't meet otherwise.</p>
-          <p className="paragraph">In all likelihood, our paths won’t cross for any reason. So often, we only meet people through work, school, or friends of friends. And even then, it’s questionable. So basically, we manufacture serendipity. </p>
+          <p className="summary">But why do we drink alone?</p>
+          <p className="paragraph">Our path's don't always cross. We all have busy schedules. Sometime's we want to meet new friends, but where? It's easy to be complacent and be alone </p>
         </div>
-        <img  src="http://dcu7hky3kqbj1.cloudfront.net/assets/landing/nevermeet-55361a98c59cda3fced04c6234e80553c4ed3858c1028008e6fa3642185d57b9.png" />
+        <img  src="https://res.cloudinary.com/dql6mlrow/image/upload/v1509436107/Screen_Shot_2017-10-31_at_12.44.18_AM_smbilv.png" />
       </div>
       <div className="pitch">
-        <img src="http://dcu7hky3kqbj1.cloudfront.net/assets/landing/highfive-e7a173c8a773070abd084deeac2eb53919a70990425599ed5e7164dc143d45c6.png" />
+        <img src="https://res.cloudinary.com/dql6mlrow/image/upload/v1509436107/Screen_Shot_2017-10-31_at_12.43.16_AM_qydtpn.png" />
         <div className="words">
-          <p className="summary">Make friends!</p>
-          <p className="paragraph">And your eyes are made…for eye contact! Real humans are so much cooler than their tweets or Instagram pictures!</p>
+          <p className="summary">It's scary meeting strangers</p>
+          <p className="paragraph">Nope. Not at all! Strangers are just friends you haven't met yet. Wasn't it a bit scary getting to know you're classmates or coworkers? Are they scary now? We all feel like that. Don't worry!</p>
         </div>
+      </div>
+      <div className="pitch">
+        <div className="words">
+          <p className="summary">So join us!</p>
+          <p className="paragraph">Don't drink wine alone, drink wine with strangers! You're future best friends!</p>
+        </div>
+        <img  src="https://res.cloudinary.com/dql6mlrow/image/upload/v1509436107/Screen_Shot_2017-10-31_at_12.42.52_AM_vbp5ki.png" />
       </div>
     </div>
   </div>
