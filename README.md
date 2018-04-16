@@ -5,10 +5,10 @@ Wine with Strangers is a meet up web app that promotes and organizes social even
 It allows users to create custom events in their home city, view other events, and RSVP to them as guests.
 
 ## Technologies Used
+- React.js/Redux
 - Ruby on Rails
 - PostgreSQL
 - Heroku
-- React.js/Redux
 - HTML5 and CSS
 
 
