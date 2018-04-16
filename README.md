@@ -1,5 +1,6 @@
 
 # Wine with Strangers
+# [Live Demo](https://wine-with-strangers.herokuapp.com)
 
 Wine with Strangers is a meet up web app that promotes and organizes social events for strangers to meet each other.
 It allows users to create custom events in their home city, view other events, and RSVP to them as guests.
