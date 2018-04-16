@@ -1,8 +1,6 @@
 # README
 # Wine with Strangers
 
-
-
 Wine with Strangers is a meet up web app that promotes and organizes social events for strangers to meet each other.
 It allows users to create custom events in their home city, view other events, and RSVP to them as guests.
 
@@ -31,19 +29,141 @@ There was significant preparation to define the scope and requirements of the tw
 - Logical and efficient RESTful APIs
 
 
-## Main Technical Challenges and Features
+## Main Technical Features
 
-
-### User Authentication and Session Management:
-
-
-![Alt text](readme_pictures/dashboard.png?raw=true "Dashboard")
-![Alt text](readme_pictures/cities.png?raw=true "Cities")
-![Alt text](readme_pictures/create_event.png?raw=true "Create Event")
-![Alt text](readme_pictures/home_screen.png?raw=true "Home")
-![Alt text](readme_pictures/signup.png?raw=true "Signup")
+## View Events by City
 ![Alt text](readme_pictures/events_in_city.png?raw=true "Events in City")
 
+
+
+load all events for a city all at once
+not much data
+code to put into state in redux cycle
+clicking on rsvp button creates database entry through api, creating a response that triggers redux cycle go into state and update single app app in real time
+
+
+
+```
+
+import { connect } from 'react-redux';
+
+import LocationsIndex from './locations_index';
+import {requestAllLocations} from '../../actions/location_actions';
+
+const mapStateToProps = (state) => ({
+  locations: state.locations
+});
+
+const mapDispatchToState = (dispatch) => ({
+  requestAllLocations: () => dispatch(requestAllLocations())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToState
+)(LocationsIndex);
+
+
+```
+
+
+
+
+```
+class LocationsIndex extends React.Component {
+
+  componentWillMount() {
+    this.props.requestAllLocations();
+  }
+
+  render () {
+    const locations = values(this.props.locations);
+
+    return (
+      <div>
+        <ul className="locations-index">
+          {locations.map(location => <LocationIndexItem key={location.id} location={location}/>)}
+        </ul>
+      </div>
+    );
+
+  }
+}
+
+```
+
+### Create and Share Custom Events
+![Alt text](readme_pictures/create_event.png?raw=true "Create Event")
+
+
+validated in rails backend,
+info all validated in rails backend error message
+ time is valid  
+
+ ```
+ class Event < ApplicationRecord
+
+   validates :name, :host_id, :address, :date, :hour, :information, presence: true
+   validates :occurred, inclusion: { in: [true, false] }
+
+   belongs_to :host,
+     primary_key: :id,
+     foreign_key: :host_id,
+     class_name: :User
+
+   belongs_to :location,
+     primary_key: :id,
+     foreign_key: :location_id,
+     class_name: :Location
+
+   has_many :rsvps,
+     primary_key: :id,
+     foreign_key: :event_id,
+     class_name: :Rsvp
+
+   has_many :guests,
+     through: :rsvps,
+     source: :attendee
+
+ end
+
+ ```
+
+### Manage Events in Dashboard
+![Alt text](readme_pictures/dashboard.png?raw=true "Dashboard")
+
+
+
+
+
+once events are created and joined, users  can enjoy an easy to use
+visually simple dashboard
+past future and hosted events
+
+redux cycle again to delete events in real time
+
+code snippet
+
+
+```
+import {connect} from 'react-redux';
+
+import HostedEvents from './hosted_events';
+import { selectUpcomingUserEvents, selectPastUserEvents, selectHostedEvents } from '../../reducers/selectors';
+
+import { requestUserEvents } from '../../actions/event_actions';
+
+const mapStateToProps = (state) => ({
+  hostedEvents: selectHostedEvents(state, state.session.currentUser.id)
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  requestUserEvents: () => dispatch(requestUserEvents())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HostedEvents);
+
+```
 
 
 

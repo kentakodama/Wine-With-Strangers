@@ -38,15 +38,4 @@ class Event < ApplicationRecord
     through: :rsvps,
     source: :attendee
 
-  # before_validation :ensure_host_id, :ensure_location_id
-  #
-  # def ensure_host_id
-  #   self.host_id = current_user.id
-  # end
-  #
-  # def ensure_location_id
-  #   self.location_id.to_i!
-  # end
-
-
 end
