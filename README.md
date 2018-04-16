@@ -1,6 +1,6 @@
 
 # Wine with Strangers
-# [Live Demo](https://wine-with-strangers.herokuapp.com)
+## [Live Demo](https://wine-with-strangers.herokuapp.com)
 
 Wine with Strangers is a meet up web app that promotes and organizes social events for strangers to meet each other.
 It allows users to create custom events in their home city, view other events, and RSVP to them as guests.
@@ -13,9 +13,9 @@ It allows users to create custom events in their home city, view other events, a
 - HTML5 and CSS
 
 
-## Main Technical Features
+## Main Technical Features:
 
-## View Events by City
+### View Events by City
 ![Alt text](readme_pictures/events_in_city.png?raw=true "Events in City")
 
 Authenticated users can browse events happening by location and RSVP to events that update in real time. In order to minimize costly database requests for each event, a single API retrieves all events for a particular city. Once users click on the RSVP button, the Rails backend creates an RSVP object associated with the user, sending back a promise object that initiates the Redux cycle - storing users events in state and re-rendering the component.
