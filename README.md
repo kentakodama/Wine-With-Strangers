@@ -1,4 +1,4 @@
-# README
+
 # Wine with Strangers
 
 Wine with Strangers is a meet up web app that promotes and organizes social events for strangers to meet each other.
