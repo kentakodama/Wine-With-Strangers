@@ -11,37 +11,19 @@ It allows users to create custom events in their home city, view other events, a
 - React.js/Redux
 - HTML5 and CSS
 
-## Features
-- Users can access different levels of information based on their login status
-- Users can browse cities and view each city's events
-- Users can RSVP and save their attendance preferences in the database and that information will be available in later version to the party organizer.
-- Users can Provide a great deal of information for the party for viewing by other users.
-- Users can user an organized dashboard to access events of different categories.
-- At the moment the user's can access their past event attendance record, view their hosted events, and their upcoming events.
-- The upcoming event list can of course be updated to reflect the user's schedule.
-
-
-## Project Design
-
-There was significant preparation to define the scope and requirements of the two week project. Much of the work involved defining:
-- The normalized Redux state of the app
-- The Rails schema and database structure
-- Logical and efficient RESTful APIs
-
 
 ## Main Technical Features
 
 ## View Events by City
 ![Alt text](readme_pictures/events_in_city.png?raw=true "Events in City")
 
+Authenticated users can browse events happening by location and RSVP to events that update in real time. In order to minimize costly database requests for each event, a single API retrieves all events for a particular city. Once users click on the RSVP button, the Rails backend creates an RSVP object associated with the user, sending back a promise object that initiates the Redux cycle - storing users events in state and re-rendering the component.
 
 
-load all events for a city all at once
-not much data
-code to put into state in redux cycle
-clicking on rsvp button creates database entry through api, creating a response that triggers redux cycle go into state and update single app app in real time
+Below shows how the Redux cycle is achieved by connecting a smart container with a normal React.js component to access and render state.
 
 
+Redux Container:
 
 ```
 
@@ -66,9 +48,7 @@ export default connect(
 
 ```
 
-
-
-
+Normal React.js Component:
 ```
 class LocationsIndex extends React.Component {
 
@@ -95,10 +75,9 @@ class LocationsIndex extends React.Component {
 ### Create and Share Custom Events
 ![Alt text](readme_pictures/create_event.png?raw=true "Create Event")
 
+Users can create and publish their own events. The form takes user inputs which are validated on several criteria in the Rails backend. Incomplete or invalid attempts to create an event entry in the database alert errors via the Events controller in Rails.
 
-validated in rails backend,
-info all validated in rails backend error message
- time is valid  
+Validations:
 
  ```
  class Event < ApplicationRecord
@@ -132,18 +111,15 @@ info all validated in rails backend error message
 ### Manage Events in Dashboard
 ![Alt text](readme_pictures/dashboard.png?raw=true "Dashboard")
 
+Users can manage their past, upcoming, and hosted events in a simple, visually-appealing dashboard.
 
+The Redux cycle enables real-time updates to the status of events. For example, a user may click the "skip" button to unjoin an event. This deletes an instance of an RSVP in the Rails backend which changes the app's state and re-renders the React.js component.
 
+Additionally, selectors are used to eliminate redundant code.
 
+Below is an example of how a smart Redux component gives a normal React.js component access to one of those types of events:
 
-once events are created and joined, users  can enjoy an easy to use
-visually simple dashboard
-past future and hosted events
-
-redux cycle again to delete events in real time
-
-code snippet
-
+hosted_events_container.js
 
 ```
 import {connect} from 'react-redux';
@@ -165,31 +141,46 @@ export default connect(mapStateToProps, mapDispatchToProps)(HostedEvents);
 
 ```
 
+hosted_events.js
+
+```
+
+class HostedEvents extends React.Component {
+
+  constructor(props){
+    super(props);
+  }
+
+  componentWillMount() {
+    this.props.requestUserEvents();
+  }
 
 
-The project was divided into several MVP modules.
+  render() {
+    const events = this.props.hostedEvents;
 
-These helped break the project down into manageable components and also allowed us to repeatedly design and implement the
+    return (
+      <div>
+        <div className="dashboard-nav">
+          <div className="dashboard-links">
+            <Link className="dashboard-link" to="/dashboard/past">Past Events</Link>
+            <Link className="dashboard-link" to="/dashboard/upcoming">Upcoming Events</Link>
+            <Link className="selected" to="/dashboard/host">Hosted Events</Link>
+          </div>
+        </div>
+        <div className="events-page">
+          <ul>
+            {
+              events.map(event =>
+                <EventIndexItem key={event.id} event={event}/>)
+            }
+          </ul>
+        </div>
+      </div>
+    );
+  }
 
-full redux cycle and full stack flow. The mvp components included:
-
-- User authentication on the front and backend. We had to consider several route and rendering possibilities at each stage in order to respond to the user's current state. This was by far the most difficult to implement, but most educational experience. It laid the groundwork for the other components.
+}
 
 
-## Loading Location-base events to Redux State:
-
- For example, each location show page of a city is also the index of all events for that particular city. This proved challenging when requesting data from the database and bringing it to the frontend. I made a calculated decision to fetch the complete events objects when requesting for location information. Although that would require the program to fetch more data than necessary, it was better than repeatedly being bottlenecked by internet speeds for continual requests. Since this was the most expensive part of the app cycle, it was best to do this as few times as possible while keeping other components lean.
-
-
-
-
-- Users must be able to rsvp to events.
-
-
-
- I like thinking about how I would fetch, parse, store, and finally retrieve data from the client and server, but also like to hear other people's ideas. I asked my advisor for his thoughts, then asked several of my cohortmates how they would approach the problem. This helped me explain, defend, but also modify my own plan of attack before actual implementation. What surprised me was that there was no consensus even amongst those who had had several years of web development experience. Some people were convinced that I should utilize the joins table directly in the backend to associate my user and events. Others were inclined to nest users inside event objects or vice versa. Where to retrieve the necessary data was also up to debate. Some urged me to use the state's current user, while my advisor convinced me to rely on the backend validations retrieve the current user. The different reasons behind each person's opinion and the realization of multiple paths was a very interesting experience for me. It made me a more critical thinker.
-
-
-dashboard navigation rethink ux experience
-
-- Lastly, I had to render a dashboard in order to organize user's data in client-side rendering. Although I was partially cloning the features of an existing web app, Tea with Strangers, the dashboard feature was not as developed in the original so I had to rethink how it would look and be utilized by the user. I had to make user experience decisions several times then attempted to code out the implementation. I often had to go back to the drawing board because I did not understand the complexity of design and how thoroughly it's interconnected with even basic data fetching. It was a great learning experience and now I am faster and more agile to come up with a plan then implement it.
+```
